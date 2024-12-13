@@ -4,10 +4,10 @@ const router = Router();
 
 // Route to create a ticket
 router.post('/open-ticket', async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, industry, companyName ,message } = req.body;
 
   try {
-    const ticket = new Ticket({ name, email, message });
+    const ticket = new Ticket({ name, email, industry, companyName ,message });
     await ticket.save();
     res.status(201).json({ message: 'Ticket submitted successfully' });
   } catch (error) {

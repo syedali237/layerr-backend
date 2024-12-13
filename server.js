@@ -4,10 +4,12 @@ import mongoose from 'mongoose';
 import authRoutes from './routes/auth.js';
 import ticketRoutes  from "./routes/tickets.js";
 import subscriptionRoutes  from "./routes/subscription.js";
+import cors from 'cors';
 
 const app = express();
 
 // Middleware
+app.use(cors());
 app.use(json());
 
 // Routes
